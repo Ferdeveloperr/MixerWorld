@@ -4,11 +4,14 @@ import "./ItemListContainer.css";
 
 const ItemListContainer = ({greeting}) => {
   return (
+  
     <div className='greetingStyle'>
-      <Progress hasStripe value={25} />
-    <div>
-    {greeting}
-    </div> 
+      <div>
+      {greeting}
+      </div> 
+        <div className='stripeStyle'>
+        <Progress hasStripe value={25} />
+        </div>
     </div>
   )
 }

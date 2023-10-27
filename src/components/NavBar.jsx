@@ -2,14 +2,15 @@ import React from 'react'
 import CartWidget from './CartWidget'
 import "./NavBar.css";
 import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer } from '@chakra-ui/react'
-
+import { FaRecordVinyl } from "react-icons/fa6";
 const NavBar = () => {
   return (
     <div className='Background'>
       
       <Flex>
   <Box p='4' >
-      <h3 >MixerWorld</h3>
+      
+      <h3>MixerWorld <FaRecordVinyl/> </h3>
       
       
     
