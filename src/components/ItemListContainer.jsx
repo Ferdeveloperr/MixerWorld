@@ -1,7 +1,8 @@
 import { Progress } from '@chakra-ui/react'
 import React from 'react'
+import ItemCount from './ItemCount';
 import "./ItemListContainer.css";
-import ItemCount from './itemCount';
+ 
 
 const ItemListContainer = () => {
   const productos = [
@@ -45,20 +46,20 @@ const ItemListContainer = () => {
     <div className='greetingStyle'>
       <div>
       {
-       productos.map((p)=>{
-        return(
-          <div key={p.id}>
-            <h2>Producto: {p.titulo}</h2>
-            <h4>$ {p.precio}</h4>
-          </div>
-       )
-       })
-
+        productos.map((p)=>{
+          return(
+            <div key={p.id}>
+              <h2>Producto: {p.titulo}</h2>
+              <h4>$ {p.precio}</h4>
+            </div>
+         )
+  
+         })
       }
       
       <itemList productos={productos}/>
 
-      {/* <ItemCount /> */}
+      <ItemCount />
       </div> 
         <div className='stripeStyle'>
         <Progress hasStripe value={25} />
