@@ -33,19 +33,19 @@ const ItemCount = () => {
 
   return (
     <div>
-      <Button colorScheme="teal" variant="outline" size="sm" onClick={incrementCount}>
-        +
+      <Button colorScheme="teal" variant="outline" size="sm" onClick={decrementCount}>
+        -
       </Button>
 
       <Badge colorScheme="green" size="md">
         {count}
       </Badge>
 
-      <Button colorScheme="teal" variant="outline" size="sm" onClick={decrementCount}>
-        -
+      <Button colorScheme="teal" variant="outline" size="sm" onClick={incrementCount}>
+        +
       </Button>
 
-      <Button colorScheme="blue" size="sm" onClick={addToCart}>
+      <Button colorScheme="blue" size="sm" variant="solid" onClick={addToCart}>
         Agregar al carrito
       </Button>
     </div>

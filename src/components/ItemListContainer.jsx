@@ -1,21 +1,20 @@
-import { Progress } from '@chakra-ui/react'
+
 import React from 'react'
-import ItemCount from './ItemCount';
 import "./ItemListContainer.css";
+import ItemList from './itemList';
  
 
 const ItemListContainer = () => {
   const productos = [
-    {id:1 , titulo:"producto A", descripcion: "descripcion producto A" , precio:1000 , categoria: "A"},
-    {id:2 , titulo:"producto B", descripcion: "descripcion producto A" , precio:1500 , categoria: "B"},
-    {id:3 , titulo:"producto C", descripcion: "descripcion producto A" , precio:2000 , categoria: "C"},
-    {id:4 , titulo:"producto D", descripcion: "descripcion producto A" , precio:3000 , categoria: "D"}
+    {id:1 , titulo:"Controladora Pioneer DDJ 400", descripcion: "Controlador DJ de 2 canales para rekordbox" , precio:1000 , categoria: "A", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrgRE0LOWWQA6-fpkX4D1SSoQA8PzGVOXNQukWUBgJZGFui4FQbOOEs2BUtLNodPxqk7U&usqp=CAU"},
+    {id:2 , titulo:"Controladora Pioneer DDJ 1000", descripcion: "Controlador DJ de 4 canales profesional para rekordbox" , precio:1500 , categoria: "A", img: "https://store.audioplanet.com.ar/wp-content/uploads/2021/07/ddj-1000-angle-scaled.jpg"},
+    {id:3 , titulo:"Auriculares Pioneer cue HDJ", descripcion: "Auriculares profesionales para cabina DJ" , precio:2000 , categoria: "B", img: "https://www.heavenimagenes.com/heavencommerce/36552d98-557c-43dd-ad26-2c9343813a85/images/v2/PIONEER/2102240923529231_01_medium.jpg"},
+    {id:4 , titulo:"Auriculares AudioTechnica M50X", descripcion: "Auriculares semi profesionales para cabina DJ" , precio:3000 , categoria: "B", img: "https://http2.mlstatic.com/D_NQ_NP_741636-MLA68837050008_042023-O.webp"},
+    {id:5 , titulo:"Parlante Rokit KRK 5", descripcion: "Parlante con kevlar y potencia de 90wts" , precio:4000 , categoria: "C", img: "https://bairesrocks.vteximg.com.br/arquivos/ids/202307/992877-MLA32737209106_112019-F.jpg?v=637313062047930000"},
+    {id:6 , titulo:"Parlante Rokit KRK 10", descripcion: "Parlante con kevlar y doble salida de audio con potencia de 200wts" , precio:5000 , categoria: "C", img: "https://m.media-amazon.com/images/I/91AS8GdtEQL.jpg"}
   ]
 
 
-  // const mostrarProductos = new Promise((resolve, reject)=>{
-
-  // })
   
   const mostrarProductos = new Promise((resolve, reject)=>{
 
@@ -45,25 +44,17 @@ const ItemListContainer = () => {
   
     <div className='greetingStyle'>
       <div>
-      {
-        productos.map((p)=>{
-          return(
-            <div key={p.id}>
-              <h2>Producto: {p.titulo}</h2>
-              <h4>$ {p.precio}</h4>
-            </div>
-         )
-  
-         })
-      }
+     
       
-      <itemList productos={productos}/>
+      <ItemList productos={productos}/>
 
-      <ItemCount />
+      
       </div> 
-        <div className='stripeStyle'>
-        <Progress hasStripe value={25} />
-        </div>
+
+
+        
+
+        
     </div>
   )
 }
