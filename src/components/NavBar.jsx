@@ -25,9 +25,15 @@ const NavBar = () => {
     Categorias
   </MenuButton>
   <MenuList>
+    <Link to={'/category/A'}>
     <MenuItem>Mixers</MenuItem>
+    </Link>
+    <Link to={'/category/B'}>
     <MenuItem>Auriculares</MenuItem>
+    </Link>
+    <Link to={'/category/C'}>
     <MenuItem>Parlantes</MenuItem>
+    </Link>
     
   </MenuList>
   </Menu>
