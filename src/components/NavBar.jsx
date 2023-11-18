@@ -3,6 +3,8 @@ import CartWidget from './CartWidget'
 import "./NavBar.css";
 import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer } from '@chakra-ui/react'
 import { FaRecordVinyl } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
+
 const NavBar = () => {
   return (
     <div className='Background'>
@@ -10,8 +12,9 @@ const NavBar = () => {
       <Flex>
   <Box p='4' >
       
+      <Link to={"/"}>
       <h3>MixerWorld <FaRecordVinyl/> </h3>
-      
+      </Link>
       
     
   </Box>
@@ -31,7 +34,11 @@ const NavBar = () => {
 
   <Spacer/>
   <Box p='4' >
+
+      <Link to={"/Cart"}>
       <CartWidget/>
+      </Link>
+
   </Box>
 </Flex>
 
