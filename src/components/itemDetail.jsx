@@ -1,41 +1,56 @@
-import React from 'react'
-import ItemCount  from './ItemCount'
-import {useParams} from 'react-router-dom'
-import { CardBody, CardFooter, CardHeader, Heading } from '@chakra-ui/react'
+import React from 'react';
+import ItemCount from './ItemCount';
+import { useParams } from 'react-router-dom';
+import Item from './Item';
 
-const itemDetail = ({productos}) => {
-  const { id } = useParams()
+import { Center, Card, CardBody, CardFooter, CardHeader, Heading, Text } from '@chakra-ui/react';
 
-  const filteredProducts = productos.filter((producto) => producto.id == id)
+const ItemDetail = ({ productos }) => {
+  const { id } = useParams();
+
+  const foundProduct = productos.find((producto) => producto.id == id);
+
+  // if (!foundProduct) {
+  //   return <div>Producto no encontrado</div>;
+  // }
+
+  const { titulo, descripcion, category, img, precio } = foundProduct || {};
+
+
   return (
     <div>
-      {
-        filteredProducts.map((p) => {
-          return (
-            <div key={p.id}>
-              <Center p='1rem'>
-                <Card>
-                  <CardHeader>
-                    <Heading size='md'>
-                      {p.nombre}                      
-                    </Heading>
-                  </CardHeader>
-                  <CardBody>
-                    <Text>{p.descripcion}</Text>
-                    <Text>{p.category}</Text>
-                  </CardBody>
-                  <CardFooter>
-                    <ItemCount/>
-                  </CardFooter>
-                </Card>
-              </Center>
-              </div>
-          )
-        })
-      }
-        <ItemCount />
-    </div>
-  )
-}
 
-export default itemDetail
+
+      {/* <Item
+
+key={id}
+category={category}
+titulo={titulo}
+descripcion={descripcion}
+precio={precio}
+img={img}
+
+
+      /> */}
+
+
+      <Center p='1rem'>
+        <Card>
+          <CardHeader>
+            <Heading size='md'>{titulo}</Heading>
+          </CardHeader>
+          <CardBody>
+          <img src={img} alt={titulo} style={{ width: '100%', height: 'auto' }}/>
+            <Text>{descripcion}</Text>
+            <Text>{category}</Text>
+          </CardBody>
+          <CardFooter>
+            <ItemCount />
+          </CardFooter>
+        </Card>
+      </Center>
+    </div>
+  );
+};
+
+export default ItemDetail;

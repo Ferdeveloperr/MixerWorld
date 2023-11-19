@@ -27,16 +27,16 @@ const Item = ({titulo, descripcion, precio, img, id,}) => {
       </Text>
     </Stack>
   </CardBody>
-  <Button variant='solid' colorScheme='blue'>
+  {/* <Button variant='solid' colorScheme='blue'>
     <Link to={`/item/${id}`}>
         Ver Detalle
     </Link>
-      </Button>
+      </Button> */}
     
   <CardFooter>
     <ButtonGroup align="center">
      
-       <ItemCount/>
+       
 
     </ButtonGroup>
   </CardFooter>

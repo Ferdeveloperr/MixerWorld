@@ -1,35 +1,29 @@
-import React from 'react'
-import Item from './item'
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import Item from './Item';
+import { Button } from '@chakra-ui/react';
 
+const ItemList = ({ productos }) => {
+  const { id } = useParams();
 
-
-const ItemList = ({productos}) => {
   return (
-
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-
-        {
-          productos.map((p)=>{
-            return(
-        
-                
-              
-              <Item
-              key={p.id}
-              category={p.category}
-              titulo={p.titulo}
-              descripcion={p.descripcion}
-              precio={p.precio}
-              img={p.img}
-              /> 
-
-           )
-    
-           })
-        }
-
+      {productos.map((p) => (
+        <div key={p.id}>
+          <Item
+            titulo={p.titulo}
+            descripcion={p.descripcion}
+            img={p.img}
+          />
+          <Button variant='solid' colorScheme='blue'>
+            <Link to={`/item/${p.id}`}>
+              Ver Detalle
+            </Link>
+          </Button>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default ItemList
+export default ItemList;
