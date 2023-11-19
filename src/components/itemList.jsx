@@ -14,6 +14,7 @@ const ItemList = ({ productos }) => {
             titulo={p.titulo}
             descripcion={p.descripcion}
             img={p.img}
+            precio={p.precio}
           />
           <Button variant='solid' colorScheme='blue'>
             <Link to={`/item/${p.id}`}>

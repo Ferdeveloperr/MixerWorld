@@ -18,12 +18,12 @@ const Item = ({titulo, descripcion, precio, img, id,}) => {
       <img src={img} alt={titulo} style={{ width: '100%', height: 'auto' }}/>
    
     <Stack mt='6' spacing='3'>
-      <Heading size='md'>Producto:{titulo}</Heading>
+      <Heading size='md'>{titulo}</Heading>
       <Text>
-        Descripcion:{descripcion}
+        {descripcion}
       </Text>
       <Text color='blue.600' fontSize='2xl'>
-        Precio: {precio}
+        ${precio}
       </Text>
     </Stack>
   </CardBody>

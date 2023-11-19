@@ -42,7 +42,7 @@ img={img}
           <CardBody>
           <img src={img} alt={titulo} style={{ width: '100%', height: 'auto' }}/>
             <Text>{descripcion}</Text>
-            <Text>{category}</Text>
+            <Text>${precio}</Text>
           </CardBody>
           <CardFooter>
             <ItemCount />
