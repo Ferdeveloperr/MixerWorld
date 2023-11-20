@@ -25,7 +25,7 @@ const ItemListContainer = () => {
       setTimeout(() => {
         resolve(productos)
 
-      }, 5000)
+      }, 1000)
 
     }else{
       reject("No se encontraron los productos")

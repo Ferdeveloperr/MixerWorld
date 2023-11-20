@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Item from './Item';
+import Item from './item';
 import { Button } from '@chakra-ui/react';
 
 const ItemList = ({ productos }) => {
@@ -12,7 +12,6 @@ const ItemList = ({ productos }) => {
         <div key={p.id}>
           <Item
             titulo={p.titulo}
-            descripcion={p.descripcion}
             img={p.img}
             precio={p.precio}
           />
@@ -21,6 +20,7 @@ const ItemList = ({ productos }) => {
               Ver Detalle
             </Link>
           </Button>
+          
         </div>
       ))}
     </div>

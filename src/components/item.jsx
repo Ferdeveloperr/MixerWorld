@@ -22,9 +22,7 @@ const Item = ({titulo, descripcion, precio, img, id,}) => {
       <Text>
         {descripcion}
       </Text>
-      <Text color='blue.600' fontSize='2xl'>
-        ${precio}
-      </Text>
+      
     </Stack>
   </CardBody>
   {/* <Button variant='solid' colorScheme='blue'>
