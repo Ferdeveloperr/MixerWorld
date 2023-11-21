@@ -15,6 +15,7 @@ const ItemDetail = ({ productos }) => {
       <Center p='1rem'>
         <Card>
           <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+            
             <img src={img} alt={titulo} style={{ width: '100%', height: 'auto' }} />
 
             <Box p='6'>
