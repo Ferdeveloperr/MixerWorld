@@ -13,7 +13,7 @@ const NavBar = () => {
   return (
     <div className='Background'>
       <Flex>
-        <Box p='4'>
+        <Box p='2'>
           <Link to={"/"}>
             <Flex align='center'>
               

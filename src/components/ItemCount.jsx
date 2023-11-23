@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button, Badge } from '@chakra-ui/react';
 import { useToast } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const ItemCount = () => {
   const toast = useToast();
@@ -45,11 +46,15 @@ const ItemCount = () => {
         +
       </Button>
 
-      <Button colorScheme="blue" size="sm" variant="solid" onClick={addToCart}>
-        Agregar al carrito
-      </Button>
+      {/* Utiliza el componente Link para la navegación */}
+      <Link to="/cart">
+        <Button colorScheme="blue" size="sm" variant="solid" onClick={addToCart}>
+          Agregar al carrito
+        </Button>
+      </Link>
     </div>
   );
 };
 
 export default ItemCount;
+
