@@ -2,7 +2,6 @@ import React from 'react';
 import CartWidget from './CartWidget';
 import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer, Button, Image } from '@chakra-ui/react';
 import { useColorMode } from '@chakra-ui/react';
-import { FaChevronDown, FaRecordVinyl } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import newBrand from '../image/newBrand.png';

@@ -2,7 +2,8 @@
 import React from 'react'
 import "./ItemListContainer.css";
 import ItemList from './itemList';
-import {useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom';
+import Home from '../Home'
  
 
 const ItemListContainer = () => {
@@ -29,13 +30,14 @@ const ItemListContainer = () => {
 
     }else{
       reject("No se encontraron los productos")
-    }
+    } 
 
   })
 
   
   .then((resultado)=>{
     console.log(resultado)
+    
   })
 
   .catch((error)=>{
@@ -62,5 +64,6 @@ const ItemListContainer = () => {
     </div>
   )
 }
+
 
 export default ItemListContainer
