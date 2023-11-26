@@ -5,7 +5,7 @@ import { useColorMode } from '@chakra-ui/react';
 import { FaChevronDown, FaRecordVinyl } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import newBrand from '../image/newbrand.png';
+import newBrand from '../image/newBrand.png';
 
 const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
