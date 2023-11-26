@@ -3,7 +3,7 @@ import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/itemDetailContainer'
 import {BrowserRouter , Routes , Route } from "react-router-dom"
-import About from './about'
+import About from './About'
 import Home from './home'
 import Cart from './components/Cart'
 
