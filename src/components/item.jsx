@@ -9,10 +9,10 @@ const Item = ({ titulo, descripcion, precio, img, id, }) => {
   return (
 
 
-    <div className='product-container'>
+    <div  >
 
 
-      <Card maxW='sm' align="center">
+      <Card maxW='sm' align="center" margin='2'>
         <CardBody>
 
           <img src={img} alt={titulo} style={{ width: '100%', height: 'auto' }} />
@@ -28,7 +28,6 @@ const Item = ({ titulo, descripcion, precio, img, id, }) => {
 
         <CardFooter>
           <ButtonGroup align="center">
-
 
 
           </ButtonGroup>

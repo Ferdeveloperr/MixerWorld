@@ -20,7 +20,7 @@ const ItemList = ({ productos }) => {
               Ver Detalle
             </Link>
           </Button>
-          
+
         </div>
       ))}
     </div>

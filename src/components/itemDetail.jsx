@@ -28,7 +28,7 @@ const ItemDetail = ({ productos }) => {
             <Box p='6'>
               <Box display='box' alignItems='center' w={100} h={50} justifyContent='center'>
                 <Badge borderRadius='full' px='3' colorScheme='purple'>
-                  <h2>{titulo}</h2>
+                  <h1>{titulo}</h1>
                 </Badge>
               </Box>
 
@@ -45,7 +45,7 @@ const ItemDetail = ({ productos }) => {
 
               <Box position='relative' h='100px'>
                 <Text color='blue.600' fontSize='2xl' fontWeight='bold' textAlign='center'>
-                   ${precio}
+                  ${precio}
                 </Text>
               </Box>
 

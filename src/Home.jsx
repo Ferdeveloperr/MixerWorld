@@ -31,7 +31,7 @@ const Home = () => {
               </Heading>
               <Text mb={2}>{producto.descripcion}</Text>
               <Text fontSize="lg" fontWeight="bold" mb={2}>
-                Precio: ${producto.precio}
+
               </Text>
               <Link to={`/item/${producto.id}`}>
                 <Button colorScheme="blue" width="100%">
