@@ -1,3 +1,10 @@
-.Tittle{
+.Tittle {
     text-align: center;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 }

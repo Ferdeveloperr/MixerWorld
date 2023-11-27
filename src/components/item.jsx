@@ -4,43 +4,38 @@ import { Card, CardHeader, CardBody, CardFooter, Stack, Heading, Divider, Button
 import "./Item.css";
 import { Link } from 'react-router-dom';
 
-const Item = ({titulo, descripcion, precio, img, id,}) => {
+const Item = ({ titulo, descripcion, precio, img, id, }) => {
 
   return (
 
 
     <div className='product-container'>
 
-  
-  <Card maxW='sm' align="center">
-  <CardBody>
-  
-      <img src={img} alt={titulo} style={{ width: '100%', height: 'auto' }}/>
-   
-    <Stack mt='6' spacing='3'>
-      <Heading size='md'>{titulo}</Heading>
-      <Text>
-        {descripcion}
-      </Text>
-      
-    </Stack>
-  </CardBody>
-  {/* <Button variant='solid' colorScheme='blue'>
-    <Link to={`/item/${id}`}>
-        Ver Detalle
-    </Link>
-      </Button> */}
-    
-  <CardFooter>
-    <ButtonGroup align="center">
-     
-       
 
-    </ButtonGroup>
-  </CardFooter>
-</Card>
+      <Card maxW='sm' align="center">
+        <CardBody>
 
-        
+          <img src={img} alt={titulo} style={{ width: '100%', height: 'auto' }} />
+
+          <Stack mt='6' spacing='3'>
+            <Heading size='md'>{titulo}</Heading>
+            <Text>
+              {descripcion}
+            </Text>
+
+          </Stack>
+        </CardBody>
+
+        <CardFooter>
+          <ButtonGroup align="center">
+
+
+
+          </ButtonGroup>
+        </CardFooter>
+      </Card>
+
+
 
     </div>
 
