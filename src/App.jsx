@@ -7,6 +7,7 @@ import About from './About'
 import Home from './Home'
 import Cart from './components/Cart'
 import ShoppingCartContext from './context/ShoppingCartContext'
+import Form from './components/Form'
 
 
 
@@ -19,7 +20,7 @@ const App = () => {
   return (
 
     <div>
-      <ShoppingCartContext>
+      {/* <ShoppingCartContext>
 
         <BrowserRouter>
 
@@ -41,7 +42,9 @@ const App = () => {
 
 
         <Cart />
-      </ShoppingCartContext>
+      </ShoppingCartContext> */}
+
+      <Form />
 
 
     </div>
