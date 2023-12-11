@@ -3,7 +3,7 @@ import CartWidget from './CartWidget';
 import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer, Button, Image } from '@chakra-ui/react';
 import { useColorMode } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
+import '../styles/NavBar.css';
 import newBrand from '../image/newBrand.png';
 
 const NavBar = () => {
@@ -15,7 +15,7 @@ const NavBar = () => {
         <Box p='2'>
           <Link to={"/"}>
             <Flex align='center'>
-              
+
               <Image src={newBrand} alt="Logo" boxSize="100px" className='BrandImage' justifyContent='center' />
             </Flex>
           </Link>
@@ -28,13 +28,13 @@ const NavBar = () => {
               Categorias
             </MenuButton>
             <MenuList>
-              <Link to={'/category/A'}>
+              <Link to={'/categoria/mixers'}>
                 <MenuItem>Mixers</MenuItem>
               </Link>
-              <Link to={'/category/B'}>
+              <Link to={'/categoria/auriculares'}>
                 <MenuItem>Auriculares</MenuItem>
               </Link>
-              <Link to={'/category/C'}>
+              <Link to={'/categoria/parlantes'}>
                 <MenuItem>Parlantes</MenuItem>
               </Link>
             </MenuList>

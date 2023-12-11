@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Item from './item';
+import Item from '../item';
 import { Button } from '@chakra-ui/react';
 
 const ItemList = ({ productos }) => {

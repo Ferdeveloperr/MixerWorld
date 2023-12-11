@@ -1,13 +1,35 @@
-import React, { useState } from 'react';
-import ItemCount from './ItemCount';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
 import { Center, Card, Box, Badge, Text } from '@chakra-ui/react';
 
-const ItemDetail = ({ productos }) => {
+
+const ItemDetail = (props) => {
   const { id } = useParams();
-  const foundProduct = productos.find((producto) => producto.id == id);
-  const { titulo, descripcion, img, precio } = foundProduct || {};
+
+  console.log(id)
+  // Obtener el array de productos directamente de las props
+  const { productos } = props;
+
+  console.log(productos)
+
+  // Verificar si productos no se encontró
+  // if (!productos || productos.length === 0) {
+  //   return <p>No se proporcionó la información del producto</p>;
+  // }
+
+  // Buscar el producto por ID
+  const foundProduct = Array.isArray(productos) ? productos.find((producto) => producto.id === id) : undefined;
+
+  // Verificar si el producto no se encontró
+  if (!foundProduct) {
+    console.log(productos);  // Agrega este console.log para verificar la estructura de productos
+    return <p>Producto no encontrado</p>;
+  }
+
+
+
+
+  const { titulo, descripcion, img, precio } = foundProduct;
 
   const [cantidadSeleccionada, setCantidadSeleccionada] = useState(0);
   const [mostrarItemCount, setMostrarItemCount] = useState(true);
@@ -15,8 +37,12 @@ const ItemDetail = ({ productos }) => {
   const handleAddToCart = (cantidad) => {
     setCantidadSeleccionada(cantidad);
     setMostrarItemCount(false);
-    // Aquí puedes realizar acciones adicionales, como agregar el producto al carrito, etc.
+
   };
+
+  useEffect(() => {
+
+  }, [foundProduct]);
 
   return (
     <div>
@@ -53,6 +79,7 @@ const ItemDetail = ({ productos }) => {
                 <Box display='flex' mt='2' alignItems='center' justifyContent='center'>
                   <Box as='span' ml='2' color='gray.600' fontSize='sm'>
                     {/* Pasa el manejador de eventos a ItemCount */}
+                    {/* Aquí también puedes pasar otros detalles del producto si es necesario */}
                     <ItemCount onAdd={handleAddToCart} />
                   </Box>
                 </Box>
@@ -72,4 +99,5 @@ const ItemDetail = ({ productos }) => {
 };
 
 export default ItemDetail;
+
 
