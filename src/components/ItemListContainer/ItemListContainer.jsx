@@ -4,9 +4,9 @@ import "../styles/itemListContainer.css";
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { collection, getDocs, getFirestore, snapshotEqual } from "firebase/firestore"
-import Item from '../item';
-import ItemDetailContainer from '../ItemDetailContainer/itemDetailContainer';
+import { collection, getDocs, getFirestore } from "firebase/firestore"
+
+
 
 
 
@@ -47,6 +47,9 @@ const ItemListContainer = () => {
   }, [categoria])
 
   const filteredProducts = productos.filter((producto) => producto.categoria === categoria)
+
+
+  console.log(categoria)
 
 
   return (

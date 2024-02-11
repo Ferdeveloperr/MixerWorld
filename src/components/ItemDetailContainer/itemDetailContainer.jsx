@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react'
 import { getDoc, doc, getFirestore } from 'firebase/firestore'
 import ItemDetail from './itemDetail'
 import { useParams } from 'react-router-dom'
+
 import Item from '../item'
 
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState(null)
-    const [productos, setProductos] = useState();
+    // const [productos, setProductos] = useState();
     const id = useParams().id;
 
     useEffect(() => {
@@ -19,7 +20,7 @@ const ItemDetailContainer = () => {
             .then((resp) => {
                 setItem(
                     { ...resp.data(), id: resp.id });
-                setProductos([resp.data()]);
+                // setProductos([resp.data()]);
             })
             .catch((error) => {
                 console.error("Error fetching item:", error);
@@ -28,7 +29,9 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            {item && <ItemDetail productos={productos} />}
+
+            {item && <ItemDetail item={item} />}
+
         </div>
     );
 }

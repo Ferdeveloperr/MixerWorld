@@ -6,12 +6,27 @@ export const ShoppingCartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
 
-    const comision = 58400
+    console.log(cart)
 
-    cart.lenght
+    const addItem = (item, quantity) => {
+        if (!isInCart(item.id)) {
+            setCart(prev => [...prev, { ...item, quantity }])
+        } else {
+            console.log('El producto ya fue agregado')
+        }
+    };
+
+    const removeItem = (itemId) => {
+        const cartUpdated = cart.filter(prod => prod.id !== itemId)
+        setCart(cartUpdated)
+    };
+
+    const clearCart = () => {
+        setCart([])
+    };
 
     return (
-        <CartContext.Provider value={{ cart, setCart, comision }}>
+        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart }}>
             {children}
         </CartContext.Provider>
     )
