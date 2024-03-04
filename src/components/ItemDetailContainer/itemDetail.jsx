@@ -1,21 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { Center, Card, Box, Badge, Text, Collapse, Button } from '@chakra-ui/react';
+// ItemDetail.js
+import React, { useState, useContext } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { Center, Box, Badge, Text, Collapse, Button } from '@chakra-ui/react';
 import ItemCount from './ItemCount';
-
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = (props) => {
-  const { id } = useParams();
 
-  // Obtener el array de productos directamente de las props
+  const { carrito, setCarrito } = useContext(CartContext);
+  console.log(carrito)
+
+
   const { item } = props;
+  const { nombre, descripcion, imagen, precio } = item;
+
+  const [cantidad, setCantidad] = useState(1);
+
+  const handleRestar = () => {
+    cantidad > 1 && setCantidad(cantidad - 1);
+  }
+
+  const handleSumar = () => {
+    setCantidad(cantidad + 1);
+  }
+
+  const handleAgregar = () => {
+    const itemAgregado = { ...item, cantidad };
+
+    setCarrito([...carrito, itemAgregado]);
+  }
 
 
-  const { nombre, descripcion, imagen, categoria, precio } = item;
+  const [show, setShow] = React.useState(false);
+  const handleToggle = () => setShow(!show);
 
-
-  const [show, setShow] = React.useState(false)
-  const handleToggle = () => setShow(!show)
 
 
   return (
@@ -55,8 +73,18 @@ const ItemDetail = (props) => {
               </Text>
             </Box>
             <Box textAlign='center'
-              mb='9'>
-              <ItemCount />
+              mb='9'>{
+                setCantidad > 0 ? (
+                  <Link to='/Cart' className='Option'> Terminar compra </Link>
+                ) : (
+
+                  <ItemCount
+                    cantidad={cantidad}
+                    handleRestar={handleRestar}
+                    handleSumar={handleSumar}
+                    handleAgregar={handleAgregar} />
+                )
+              }
             </Box>
           </Box>
 
@@ -64,6 +92,8 @@ const ItemDetail = (props) => {
         </Box>
 
       </Center>
+
+
     </div>
   );
 };

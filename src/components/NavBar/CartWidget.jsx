@@ -5,7 +5,7 @@ const CartWidget = () => {
   return (
     <div>
       <h5>Carrito</h5>
-      <Badge colorScheme='purple'></Badge>
+      <Badge colorScheme='purple'>0</Badge>
 
     </div>
   )
