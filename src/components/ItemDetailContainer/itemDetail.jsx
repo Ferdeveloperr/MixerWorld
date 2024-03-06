@@ -14,6 +14,7 @@ const ItemDetail = (props) => {
   const { item } = props;
   const { nombre, descripcion, imagen, precio } = item;
 
+
   const [cantidad, setCantidad] = useState(1);
 
   const handleRestar = () => {
@@ -26,8 +27,9 @@ const ItemDetail = (props) => {
 
   const handleAgregar = () => {
     const itemAgregado = { ...item, cantidad };
+    console.log(itemAgregado)
 
-    setCarrito([...carrito, itemAgregado]);
+    setCarrito([carrito, itemAgregado]);
   }
 
 
