@@ -5,13 +5,11 @@ import { Center, Box, Badge, Text, Collapse, Button } from '@chakra-ui/react';
 import ItemCount from './ItemCount';
 import { CartContext } from '../../context/CartContext';
 
-const ItemDetail = (props) => {
+const ItemDetail = ({ item }) => {
 
   const { carrito, setCarrito } = useContext(CartContext);
   console.log(carrito)
 
-
-  const { item } = props;
   const { nombre, descripcion, imagen, precio } = item;
 
 
@@ -25,12 +23,7 @@ const ItemDetail = (props) => {
     setCantidad(cantidad + 1);
   }
 
-  const handleAgregar = () => {
-    const itemAgregado = { ...item, cantidad };
-    console.log(itemAgregado)
 
-    setCarrito([carrito, itemAgregado]);
-  }
 
 
   const [show, setShow] = React.useState(false);
@@ -84,7 +77,7 @@ const ItemDetail = (props) => {
                     cantidad={cantidad}
                     handleRestar={handleRestar}
                     handleSumar={handleSumar}
-                    handleAgregar={handleAgregar} />
+                    handleAgregar={() => { setCarrito(item, cantidad) }} />
                 )
               }
             </Box>

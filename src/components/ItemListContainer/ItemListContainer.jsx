@@ -12,13 +12,10 @@ import { collection, getDocs, getFirestore } from "firebase/firestore"
 
 
 
+
 const ItemListContainer = () => {
 
 
-  //   const filteredProducts = productos.filter((producto) => producto.category === category)
-
-
-  //Eleccion de producto por categoria en firebase
 
   const [productos, setProductos] = useState([])
   const { categoria } = useParams();
